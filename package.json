@@ -1,5 +1,5 @@
 {
-  "name": "assignment three",
+  "name": "assignment-three",
   "version": "0.0.0",
   "private": true,
   "scripts": {
@@ -20,5 +20,6 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "devDependencies": {},
   "description": ""
 }
