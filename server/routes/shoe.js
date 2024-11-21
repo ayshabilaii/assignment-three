@@ -2,9 +2,9 @@ var express = require('express');
 var router = express.Router();
 let mongoose = require('mongoose');
 // telling my router that I have this model
-let Book = require('../model/shoe.js');
-const book = require('../model/shoe.js');
-let bookController = require('../controllers/shoe.js')
+let Shoe = require('../model/shoe.js');
+const shoe = require('../model/shoe.js');
+let shoeController = require('../controllers/shoe.js')
 /* Get route for the book list - Read Operation */
 /*
 GET,
@@ -14,10 +14,10 @@ Put --> Edit/Update
 /* Read Operation --> Get route for displaying the books list */
 router.get('/',async(req,res,next)=>{
 try{
-    const BookList = await Book.find();
+    const ShoeList = await Shoe.find();
     res.render('shoe/list',{
         title:'Shoes',
-        BookList:BookList
+        ShoeList:ShoeList
     })}
     catch(err){
         console.error(err);
@@ -44,14 +44,14 @@ router.get('/add',async(req,res,next)=>{
 /* Create Operation --> Post route for processing the Add Page */
 router.post('/add',async(req,res,next)=>{
     try{
-        let newBook = Book({
+        let newShoe = Shoe({
             "Brand":req.body.Brand,
             "Size":req.body.Size,
             "Color":req.body.Color,
             "Price":req.body.Price
         });
-        Book.create(newBook).then(()=>{
-            res.redirect('/bookslist');
+        Shoe.create(newShoe).then(()=>{
+            res.redirect('/shoeslist');
         })
     }
     catch(err)
@@ -66,11 +66,11 @@ router.post('/add',async(req,res,next)=>{
 router.get('/edit/:id',async(req,res,next)=>{
     try{
         const id = req.params.id;
-        const bookToEdit= await Book.findById(id);
+        const shoeToEdit= await shoe.findById(id);
         res.render('shoe/edit',
             {
                 title:'Edit Shoe',
-                Book:bookToEdit
+                Shoe:shoeToEdit
             }
         )
     }
@@ -84,15 +84,15 @@ router.get('/edit/:id',async(req,res,next)=>{
 router.post('/edit/:id',async(req,res,next)=>{
     try{
         let id=req.params.id;
-        let updatedBook = Book({
+        let updatedShoe = Shoe({
             "_id":id,
             "Brand":req.body.Brand,
             "Size":req.body.Size,
             "Color":req.body.Color,
             "Price":req.body.Price
         });
-        Book.findByIdAndUpdate(id,updatedBook).then(()=>{
-            res.redirect('/bookslist')
+        Shoe.findByIdAndUpdate(id,updatedShoe).then(()=>{
+            res.redirect('/shoeslist')
         })
     }
     catch(err){
@@ -106,8 +106,8 @@ router.post('/edit/:id',async(req,res,next)=>{
 router.get('/delete/:id',async(req,res,next)=>{
     try{
         let id=req.params.id;
-        Book.deleteOne({_id:id}).then(()=>{
-            res.redirect('/bookslist')
+        Shoe.deleteOne({_id:id}).then(()=>{
+            res.redirect('/shoeslist')
         })
     }
     catch(error){

@@ -2,13 +2,13 @@
 
 const mongoose = require("mongoose");
 
-let bookModel = mongoose.Schema({
+let shoeModel = mongoose.Schema({
     Brand: String,
     Size: Number,
     Color: String,
     Price: Number
 },
 {
-    collection:"Bio_books"
+    collection:"Shoe collection"
 });
-module.exports =mongoose.model('Book',bookModel);
+module.exports =mongoose.model('Shoe',shoeModel);

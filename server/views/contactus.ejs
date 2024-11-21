@@ -1,6 +1,49 @@
 <%- include Partials/header.ejs%>
 <%- include Partials/main_nav.ejs%>
 
+<!DOCTYPE html>
+<html>
 
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="style.css"/>
+    <link rel="stylesheet" href="./css/mdForDesktop.css" media="screen and (min-width: 1024px)"/>
+    <link rel="stylesheet" href="./css/mdForSmall.css" media="screen and (max-width: 768px)"/>
+    <title>Contact Me</title>
+</head> 
+
+<body>
+
+    <div id="contact-page">
+    <div id="wrapper">
+        <h3>Get In Touch</h3>
+        <h1>Contact</h1>
+        <form action="mailto:aysha.bilai@ontariotechu.net?subject=Mistakes" method="post" enctype="text/plain" name="form">
+            <p>
+                <label for="name">Name :</label>
+                <input type="text" name="name" size="32" required>
+            </p>
+            <p>
+                <label for="email">Email :</label>
+                <input type="email" name="email" size="48" required>
+            </p>
+            <p>
+                <label for="comments">Comments :</label>
+                <textarea name="comments" cols="40" rows="8"></textarea>
+            </p>
+            <p>
+                <input type="checkbox" name="maillist" id="maillist">
+                <label for="maillist">Put me on the list for subscription</label>
+            </p>
+            <p>
+                <input type="submit" value="Click to submit">
+                <input type="reset" value="Click to reset">
+            </p>
+        </form>
+    </div>
+    
+</body>
+
+</html>
 
 <%- include Partials/footer.ejs%>
