@@ -5,8 +5,8 @@ Collection tab: Display of database
 Shoe tab: Where user can do CRUD applications
 
 Images used: 
-https://unsplash.com/photos/pair-of-white-nike-high-top-shoes-SxAXphIPWeg
-https://unsplash.com/photos/unpaired-off-white-x-nike-air-force-1-low-top-sneaker-PqbL_mxmaUE
+- https://unsplash.com/photos/pair-of-white-nike-high-top-shoes-SxAXphIPWeg
+- https://unsplash.com/photos/unpaired-off-white-x-nike-air-force-1-low-top-sneaker-PqbL_mxmaUE
 
 Live link: 
-https://assignment-three.onrender.com/collection
+- https://assignment-three.onrender.com/collection
