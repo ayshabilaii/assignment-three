@@ -14,10 +14,10 @@ Put --> Edit/Update
 /* Read Operation --> Get route for displaying the books list */
 router.get('/',async(req,res,next)=>{
 try{
-    const ShoeList = await Shoe.find();
+    const ShoeList = await Shoe.find(); // retrieve all documents from the Shoe collection
     res.render('shoe/list',{
         title:'Shoes',
-        ShoeList:ShoeList
+        ShoeList:ShoeList // passes list of shoes to view
     })}
     catch(err){
         console.error(err);
@@ -44,6 +44,7 @@ router.get('/add',async(req,res,next)=>{
 /* Create Operation --> Post route for processing the Add Page */
 router.post('/add',async(req,res,next)=>{
     try{
+        // create new shoe object with the form data
         let newShoe = Shoe({
             "Brand":req.body.Brand,
             "Size":req.body.Size,
@@ -65,7 +66,7 @@ router.post('/add',async(req,res,next)=>{
 /* Update Operation --> Get route for displaying me the Edit Page */
 router.get('/edit/:id',async(req,res,next)=>{
     try{
-        const id = req.params.id;
+        const id = req.params.id; // extracts the shoe ID from the URL
         const shoeToEdit= await shoe.findById(id);
         res.render('shoe/edit',
             {

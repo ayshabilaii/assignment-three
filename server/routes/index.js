@@ -1,7 +1,8 @@
-var express = require('express');
-var router = express.Router();
+var express = require('express'); // express framework for routing and handling requests
+var router = express.Router(); // create a router object to define routes
 let Shoe = require('../model/shoe.js');
 const shoe = require('../model/shoe.js');
+
 /* GET index page. */
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'Home' });

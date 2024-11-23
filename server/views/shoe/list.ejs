@@ -4,8 +4,8 @@
  <!-- Intro Section -->
   <section class="intro-section">
     <div class="text-content">
-      <h2>Wish list!</h2>
-      <h1>Keep track of what shoes you want in the future by adding, deleting, or editing!</h1>
+      <h2>Add, delete, and edit!</h2>
+      <h1>Keep track of what shoes you own by adding it here!</h1>
     </div>
   </section>
 </main>
@@ -22,7 +22,8 @@
     <div class="row">
         <% for(let count = 0; count < ShoeList.length; count++) { %>
         <div class="col-md-4">
-            <div class="card mb-4 shadow-sm"> 
+            <div class="card mb-4 shadow-sm">
+                <!-- card header, displays shoes brand in the center --> 
                 <div class="card-header text-center">
                     <h5><%= ShoeList[count].Brand %></h5>
                 </div>
@@ -34,6 +35,7 @@
                         <a href="/shoeslist/edit/<%= ShoeList[count]._id %>" class="btn btn-primary btn-sm">
                             <i class="fas fa-edit"></i> Edit
                         </a>
+                        <!-- delete button with confirmation -->
                         <a href="/shoeslist/delete/<%= ShoeList[count]._id %>" class="btn btn-danger btn-sm"
                             onclick="return confirm('Are you sure you want to delete this item?');">
                             <i class="fas fa-trash-alt"></i> Delete
